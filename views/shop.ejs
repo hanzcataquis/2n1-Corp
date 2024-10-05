@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Shop - 2N1 Cafe Corp</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/navbar') %>
+
+    <div class="container">
+        <h1>Our Products</h1>
+        
+        <!-- Hot Coffee Category -->
+        <h2>Hot Coffee</h2>
+        <div class="product-grid">
+            <% 
+                const hotCoffee = [
+                    {
+                        id: 1,
+                        name: "Espresso",
+                        description: "Rich and bold espresso brewed from high-quality beans.",
+                        price: 2.50,
+                        size: "Single Shot",
+                        quantity: 100,
+                        image: "espresso.jpg" // Ensure this image is present in the uploads folder
+                    },
+                    {
+                        id: 2,
+                        name: "Cappuccino",
+                        description: "A classic blend of espresso, steamed milk, and foam.",
+                        price: 3.50,
+                        size: "12 oz",
+                        quantity: 50,
+                        image: "cappuccino.jpg" // Ensure this image is present in the uploads folder
+                    },
+                    {
+                        id: 3,
+                        name: "Latte",
+                        description: "Smooth and creamy latte made with fresh milk.",
+                        price: 4.00,
+                        size: "16 oz",
+                        quantity: 75,
+                        image: "latte.jpg" // Ensure this image is present in the uploads folder
+                    },
+                    {
+                        id: 4,
+                        name: "Mocha",
+                        description: "A delicious combination of espresso, chocolate, and steamed milk.",
+                        price: 4.50,
+                        size: "16 oz",
+                        quantity: 30,
+                        image: "mocha.jpg" // Ensure this image is present in the uploads folder
+                    }
+                ];
+            %>
+            <% hotCoffee.forEach(product => { %>
+                <div class="product-card">
+                    <img src="/uploads/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                    <h2 class="product-name"><%= product.name %></h2>
+                    <p class="product-description">Description: <%= product.description %></p>
+                    <p class="product-size">Size: <%= product.size %></p>
+                    <p class="product-price">Price: $<%= product.price.toFixed(2) %></p>
+                    <p class="product-quantity">Available: <%= product.quantity %></p>
+                    <button class="purchase-button" onclick="purchaseProduct('<%= product.name %>')">Purchase</button>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Iced Coffee Category -->
+        <h2>Iced Coffee</h2>
+        <div class="product-grid">
+            <% 
+                const icedCoffee = [
+                    {
+                        id: 5,
+                        name: "Iced Coffee",
+                        description: "Chilled coffee brewed to perfection, served over ice.",
+                        price: 3.00,
+                        size: "16 oz",
+                        quantity: 80,
+                        image: "iced_coffee.jpg" // Ensure this image is present in the uploads folder
+                    }
+                ];
+            %>
+            <% icedCoffee.forEach(product => { %>
+                <div class="product-card">
+                    <img src="/uploads/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                    <h2 class="product-name"><%= product.name %></h2>
+                    <p class="product-description">Description: <%= product.description %></p>
+                    <p class="product-size">Size: <%= product.size %></p>
+                    <p class="product-price">Price: $<%= product.price.toFixed(2) %></p>
+                    <p class="product-quantity">Available: <%= product.quantity %></p>
+                    <button class="purchase-button" onclick="purchaseProduct('<%= product.name %>')">Purchase</button>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Frappe Category -->
+        <h2>Frappe</h2>
+        <div class="product-grid">
+            <% 
+                const frappe = [
+                    {
+                        id: 6,
+                        name: "Frappe Coffee",
+                        description: "Smooth and rich coffee blended with ice and cream.",
+                        price: 4.00,
+                        size: "16 oz",
+                        quantity: 50,
+                        image: "frappe.jpg" // Ensure this image is present in the uploads folder
+                    }
+                ];
+            %>
+            <% frappe.forEach(product => { %>
+                <div class="product-card">
+                    <img src="/uploads/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                    <h2 class="product-name"><%= product.name %></h2>
+                    <p class="product-description">Description: <%= product.description %></p>
+                    <p class="product-size">Size: <%= product.size %></p>
+                    <p class="product-price">Price: $<%= product.price.toFixed(2) %></p>
+                    <p class="product-quantity">Available: <%= product.quantity %></p>
+                    <button class="purchase-button" onclick="purchaseProduct('<%= product.name %>')">Purchase</button>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Cream-based Frappe Category -->
+        <h2>Cream-based Frappe</h2>
+        <div class="product-grid">
+            <% 
+                const creamBasedFrappe = [
+                    {
+                        id: 7,
+                        name: "Chocolate Cream Frappe",
+                        description: "A delicious blend of chocolate and coffee with whipped cream.",
+                        price: 4.50,
+                        size: "16 oz",
+                        quantity: 30,
+                        image: "chocolate_frappe.jpg" // Ensure this image is present in the uploads folder
+                    }
+                ];
+            %>
+            <% creamBasedFrappe.forEach(product => { %>
+                <div class="product-card">
+                    <img src="/uploads/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                    <h2 class="product-name"><%= product.name %></h2>
+                    <p class="product-description">Description: <%= product.description %></p>
+                    <p class="product-size">Size: <%= product.size %></p>
+                    <p class="product-price">Price: $<%= product.price.toFixed(2) %></p>
+                    <p class="product-quantity">Available: <%= product.quantity %></p>
+                    <button class="purchase-button" onclick="purchaseProduct('<%= product.name %>')">Purchase</button>
+                </div>
+            <% }); %>
+        </div>
+
+    </div>
+
+    <%- include('partials/footer') %>
+    <script src="/js/main.js"></script>
+    <script>
+        function purchaseProduct(productName) {
+            alert(`You have selected to purchase: ${productName}. This feature is coming soon!`);
+            // Here you can implement the purchase functionality
+        }
+    </script>
+</body>
+</html>
